@@ -4,7 +4,7 @@ While I use PhpStorm as my IDE of choice, this setup process should work with an
 This setup process is how I was able to get Xdebug 3 working in my projects after watching [Programming with Gio's short tutorial](https://youtu.be/7YuYxbYd3P0). Even using this setup, I highly recommend watching his video.
 
 ## Step 1: Installing Xdebug
-Again, this setup is for Docker. If you are not using Docker, you can install Xdebug on your local machine. Just following the [install directions here](https://xdebug.org/wizard). Additional information about Xdebug can be found [here on there Github](https://github.com/xdebug/xdebug#xdebug).
+Again, this setup is for Docker. If you are not using Docker, you can install Xdebug on your local machine. Just following the [install directions here](https://xdebug.org/wizard). Additional information about Xdebug can be found [here on their Github](https://github.com/xdebug/xdebug#xdebug).
 
 In your Dockerfile, add the line to install Xdebug. For me, it looks like the following:
 ```
@@ -25,7 +25,7 @@ RUN pecl install xdebug \
 
 Before you finalize the installation and rebuild your container, if you use docker-compose, jump to Step 1.5 first, and then come back.
 
-Final step is to rebuild the container. In the Terminal, navigate to the directory of your **docker-compose.yml** file, and execute `docker up -d --build`. This will safely rebuild your containers to include any changes you made, without wiping any data (i.e., it won't delete your databases if you have a SQL container).
+The final step is to rebuild the container. In the Terminal, navigate to the directory of your **docker-compose.yml** file, and execute `docker up -d --build`. This will safely rebuild your containers to include any changes you made, without wiping any data (i.e., it won't delete your databases if you have a SQL container).
 
 ### Step 1.5: Docker Compose
 Ensure your **docker-compose.yml** file is correct. If you added the property ***ports:*** to your **php-fpm** section, go ahead and remove it. Xdebug does not require any special configuration within the **docker-compose.yml** file to work.
